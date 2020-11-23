@@ -1,0 +1,60 @@
+<!doctype html>
+
+<head>
+
+    <title>ScribbleIT!: Draw ‘n Guess</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- JS -->
+    <script src="//code.jquery.com/jquery-2.1.0.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="grey-out hidden">
+        <form class="user"><label for="username">Hello! </label><input id="username" type="text" placeholder="Enter your name" maxlength="14" autofocus>
+            <button type="submit" id="submitname">Play</button>
+        </form>
+    </div>
+
+    <div id="main">
+        <!-- <h1 style="background-color: #FCE38A;">ScribbleIT!</h1> -->
+        <div style="background-color: white;">
+
+            <img src="pictures/logo.gif" style="display:block; margin-left: auto ; margin-right: auto;">
+        </div>
+        <div class="row">
+            <div id="top-message">
+                <div class="draw hidden">
+                    <p>The secret word is: <span class="word"></span></p>
+                </div>
+                <form id="guess" class="hidden">
+                    Guess the word! <input name="guess" class="guess-input" type="text">
+                </form>
+            </div>
+            <canvas id="canvas"></canvas>
+            <div class="users">
+                <ul style="background-color: rgb(150, 196, 233); color: black; height:406px;"></ul>
+                <div id="guesses" style="background-color:#FCE38A; height:40px;"></div>
+                <div class="draw-buttons">
+                    <button value="0" class="clear" type="button">X</button>
+                    <button value="#000000" class="black" type="button"></button>
+                    <button value="#0000EE" class="blue" type="button"></button>
+                    <button value="#66CD00" class="green" type="button"></button>
+                    <button value="#FF0000" class="red" type="button"></button>
+                    <button value="#FFFF00" class="yellow" type="button"></button>
+                    <button value="white" class="white" type="button"></button>
+
+                </div>
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/hnH_KraYSkc" frameborder="0" allowfullscreen></iframe> -->
+            </div>
+        </div>
+    </div>
+</body>
